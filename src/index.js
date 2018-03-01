@@ -107,9 +107,15 @@ class Game extends React.Component {
                   : null
           }) Go to move # ${move}`
         : `Go to game start`
+
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button
+            onClick={() => this.jumpTo(move)}
+            className={history.length - 1 == move ? 'ok' : 'regular'}
+          >
+            {desc}
+          </button>
         </li>
       )
     })

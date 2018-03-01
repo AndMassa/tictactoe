@@ -92,6 +92,14 @@ class Game extends React.Component {
     const moves = history.map((step, move) => {
       const desc = move
         ? `(${
+          step.buttonClicked < 3
+            ? 0
+            :
+          step.buttonClicked <  6
+            ? 1
+              : step.buttonClicked < 9
+                ? 2
+                : null },${
             step.buttonClicked === 0 ||
             step.buttonClicked === 3 ||
             step.buttonClicked === 6
